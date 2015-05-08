@@ -1,0 +1,58 @@
+/*   	Christian Collosi
+ *		11233529 - Lab 2
+ *		DesignA.txt
+ *		CS131
+ */
+
+MPI include files
+Any other include files used by my program
+
+func Main(command line args)
+	init variables needed for the data
+	array of strings
+	init variables needed for MPI
+
+
+	Initialize MPI environment
+	MPI_init with command line arguments
+	MPI_Comm_size configure the number of MPI processes in the communicator
+	MPI_Comm_rank 
+
+	Perform Masters Tasks:
+		Initialize the Array()
+
+	// the offsets should already be divided up into its sections
+	// all each section has to do is loop through its size 
+	// and attempt to find the matching string
+	MPI_Scatter(send in all parameters needed)
+
+	loop through section of array:
+		if the string matches the string we are looking for:
+			set a flag to indicate it was found and return the needed information
+			break
+
+	MPI_Gather(Gather up all the information for each thread)
+
+	if Master then:
+		print the results
+		write to file
+	
+	// Terminate MPI
+	MPI_Finalize()
+
+
+Program ends
+
+func init Array():
+	open file
+	extract first 3 lines into NT, NS and searchString
+
+	loop file the file is not EOF:
+		extacts all strings and add them to an array
+		increment array
+
+	close file
+
+end of 
+
+

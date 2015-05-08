@@ -1,0 +1,40 @@
+/*   	Christian Collosi
+ *		11233529 - Lab 2
+ *		DesignB.txt
+ *		CS131
+ */
+
+MPI include files
+Any other include files used by my program
+
+func Main(command line args)
+	init variables needed for MPI
+
+
+	Initialize MPI environment
+	MPI_init with command line arguments
+	MPI_Comm_size configure the number of MPI processes in the communicator
+	MPI_Comm_rank 
+	
+	// all processes will wait here until they send a message to master
+	// then they can continue
+	my_barrier();
+
+	MPI_Finalize()
+
+end of Main
+
+func my_barrier():
+	if Not Master then:
+		MPI_Recv(each process will recv this message from master)
+
+	MPI_send(everyone will send out their message back to master from here)
+
+	if Master then:
+		// Master waits for all processes to send a message that they have reached a potn.
+		MPI_recv(Master will now get the message from tasks that they completed)
+
+end of my_barrier
+
+	
+
